@@ -3,7 +3,11 @@ li {
 }
 
 .main_title_a {
-    color: #fff;
+    color: #373a3c;
+}
+
+.main_title_a:hover {
+    color: #373a3c;
 }
 
 .opennamu_ul {
