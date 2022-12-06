@@ -135,7 +135,7 @@
                         </div>
                         <div class="live-recent-footer">
                             <a id="liberty_recent_link" href="/recent_changes" title="{{'recent_change'|load_lang}}">
-                                <span class="label label-info">더보기</span>
+                                <span class="label label-info">더 보기</span>
                             </a>
                         </div>
                         <div class="right-ads">
@@ -174,7 +174,7 @@
                     {% endif %}
                     <div class="title">
                         <h1 id="main_title">
-                            {{imp[0]}}
+                            <a class="main_title_a" href="/w/{{imp[0]}}">{{imp[0]}}</a>
                             {% if imp[3][0] != 0 %}
                                 <sub>{{imp[3][0]}}</sub>
                             {% endif %}

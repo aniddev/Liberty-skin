@@ -2,6 +2,10 @@ li {
     margin: 0.4em 0 0.4em 1em;
 }
 
+.main_title_a {
+    color: #fff;
+}
+
 .opennamu_ul {
     padding-left: 0.7rem;
 }
@@ -145,10 +149,18 @@ div.scroll-buttons {
     font-family: FontAwesome;
 }
 
+.opennamu_link_out, .opennamu_link_inter {
+    color: #090;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 1.4rem 0 0.7rem;
     padding-bottom: 5px;
     border-bottom: 1px solid #ccc;
+}
+
+hr {
+    border-color: #ccc;
 }
 
 .navbar-brand {
@@ -260,11 +272,6 @@ ul#live-recent-list li {
     border-left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0.35rem;
-}
-
-summary {
-    cursor: pointer;
-    user-select: none;
 }
 
 html {
