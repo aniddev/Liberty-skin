@@ -12,6 +12,14 @@ input:hover, button:hover, select:hover {
     transition: 0.3s;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html {
     font-size: 15px;
 }
@@ -266,9 +274,8 @@ del, s, strike {
 
 .Liberty .nav-wrapper .navbar .navbar-login .fa {
     color: #fff;
-    padding: 0.7rem 0;
-    font-size: 1.5rem;
-    line-height: 1.4rem;
+    padding: 0.3rem 0;
+    font-size: 1.4rem;
 }
 
 .Liberty .nav-wrapper .navbar .navbar-login .login-menu {
@@ -296,9 +303,25 @@ del, s, strike {
 
 .Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu {
     top: 120%;
-    right: -1rem;
+    right: -0.5rem;
     z-index: 1002;
 }
+
+.login-dropdown-name {
+    padding: 0.2rem 0.8rem 0.2rem 0;
+    text-align: right;
+}
+
+.login-dropdown-name1 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0.1rem;
+}
+
+.login-dropdown-name2 {
+    font-size: 12px;
+}
+
 
 .Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:before, .Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:after {
     bottom: 100%;
@@ -313,14 +336,14 @@ del, s, strike {
     border-bottom-color: #e1e8ed;
     border-width: 0.8rem;
     left: auto;
-    right: 1.15rem;
+    right: 0.7rem;
 }
 
 .Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:after {
     border-bottom-color: #fff;
     border-width: 0.78rem;
     left: auto;
-    right: 1.15rem;
+    right: 0.7rem;
 }
 /* 네비 수정 End */
 
@@ -328,7 +351,6 @@ del, s, strike {
 .Liberty .content-wrapper .liberty-sidebar {
     float: right;
     width: 15rem;
-    position: relative;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed {
@@ -567,11 +589,12 @@ del, s, strike {
 }
 
 #topic_color {
-    background-color: #BBEABB;
+    background-color: #bbeabb;
 }
 
 #topic_color:hover {
-background-color: #A8EAA8;
+background-color: #c5f4c5;
+color: #373a3c;
 }
 /* 컨텐츠 수정 End */
 

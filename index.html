@@ -36,7 +36,7 @@
         {% if imp[2][12] != 0 and imp[2][12] == 'w' %}
             <meta name="description" content="{{data|cut_100}}">
         {% endif %}
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta property="og:type" content="website">
         <meta name="theme-color" content="#F74646">
     </head>
@@ -56,13 +56,15 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle dropdown-toggle-fix" href="#" data-toggle="dropdown" aria-expanded="false">
-                            <span class="fa fa-wrench"></span><span class="hide-title">{{'tool'|load_lang}}</span>
+                            <span class="fa fa-gear"></span><span class="hide-title">{{'tool'|load_lang}}</span>
                         </a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="/change/skin_set"><span class="fa fa-cog"></span><span class="hide-title">{{'skin_set'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/other"><span class="fa fa-plus-circle"></span><span class="hide-title">{{'tool'|load_lang}}</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/change/skin_set"><span class="fa fa-wrench"></span><span class="hide-title">{{'skin_set'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/upload"><span class="fa fa-upload"></span><span class="hide-title">{{'upload'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/admin_list"><span class="fa fa-user-secret"></span><span class="hide-title">{{'admin_list'|load_lang}}</span></a>
-                            <a class="dropdown-item" href="/admin_log"><span class="fa fa-outdent"></span><span class="hide-title">{{'authority_use_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/list/admin/auth_use"><span class="fa fa-outdent"></span><span class="hide-title">{{'authority_use_list'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/title_index"><span class="fa fa-folder-open"></span><span class="hide-title">{{'all_document_list'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/please"><span class="fa fa-chain-broken"></span><span class="hide-title">{{'need_document'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/long_page"><span class="fa fa-file-text-o"></span><span class="hide-title">{{'long_page'|load_lang}}</span></a>
@@ -72,36 +74,80 @@
                             <a class="dropdown-item" href="/user_log"><span class="fa fa-users"></span><span class="hide-title">{{'member_list'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/image_file_list"><span class="fa fa-file-image-o"></span><span class="hide-title">{{'image_file_list'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/vote"><span class="fa fa-ticket"></span><span class="hide-title">{{'vote_list'|load_lang}}</span></a>
-                            <a class="dropdown-item" href="/other"><span class="fa fa-plus-circle"></span><span class="hide-title">{{'tool'|load_lang}}</span></a>
-                            {% if imp[2][9] != '0' %}
-                                <a class="dropdown-item" href="/manager/1"><span class="fa fa-sliders"></span><span class="hide-title">{{'admin_tool'|load_lang}}</span></a>
-                            {% endif %}
                         </div>
                     </li>
+                    {% if imp[2][9] != '0' %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-toggle-fix" href="#" data-toggle="dropdown" aria-expanded="false">
+                                <span class="fa fa-sliders"></span><span class="hide-title">{{'admin_tool'|load_lang}}</span>
+                            </a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" href="/manager"><span class="fa fa-sliders"></span><span class="hide-title">{{'admin_tool'|load_lang}}</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/manager/3"><span class="hide-title">{{'check_user'|load_lang}}</span></a>
+                                <a class="dropdown-item" href="/auth/give/ban"><span class="hide-title">{{'ban'|load_lang}}</span></a>
+                                <a class="dropdown-item" href="/manager/5"><span class="hide-title">{{'authorize'|load_lang}}</span></a>
+                            </div>
+                        </li>
+                    {% endif %}
                 </ul>
                 <div class="navbar-login">
-                    {% if imp[2][2] == 0 %}
-                        <a href="/user" title="{{imp[2][5]}}" class="none-outline">
-                            <span class="fa fa-sign-in"></span>
+                    <div class="dropdown login-menu">
+                        <a class="dropdown-toggle" type="button" id="login-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if imp[2][2] == 0 %}
+                                <span class="fa fa-user"></span>
+                            {% else %}
+                            {% if imp[2][4] != '' %}
+                                <img class="profile-img" src="https://secure.gravatar.com/avatar/{{imp[2][4]|md5_replace}}?d=retro">
+                            {% else %}
+                                <img class="profile-img" src="https://secure.gravatar.com/avatar/00000000000000000000000000000000?d=retro&f=y">
+                            {% endif %}
+                            {% endif %}
                         </a>
-                    {% else %}
-                        <div class="dropdown login-menu">
-                            <a href="/user" title="{{imp[2][5]}}">
-                                {% if imp[2][4] != '' %}
-                                    <img class="profile-img" src="https://secure.gravatar.com/avatar/{{imp[2][4]|md5_replace}}?d=retro">
-                                {% else %}
-                                    <img class="profile-img" src="https://secure.gravatar.com/avatar/00000000000000000000000000000000?d=retro&f=y">
-                                {% endif %}
-                            </a>
+                        <div aria-labelledby="login-menu" class="dropdown-menu dropdown-menu-right login-dropdown-menu">
+                            <div class="login-dropdown-name">
+                                <div class="login-dropdown-name1">
+                                    {{imp[2][10]}}
+                                </div>
+                                <div class="login-dropdown-name2">
+                                    {% if imp[2][2] == 0 %}
+                                    IP User
+                                    {% else %}
+                                    {% if imp[2][4] != '' %}
+                                    Member
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/user"><span class="hide-title">{{'user_tool'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/change"><span class="hide-title">{{'user_setting'|load_lang}}</span></a>
+                            {% if imp[2][2] == 1 %}
+                                <a class="dropdown-item" href="/w/user:{{imp[2][10]}}"><span class="hide-title">{{'user_document'|load_lang}}</span></a>
+                            {% endif %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/record/{{imp[2][10]}}"><span class="hide-title">{{'edit_record'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/record/topic/{{imp[2][10]}}"><span class="hide-title">{{'discussion_record'|load_lang}}</span></a>
+                            {% if imp[2][2] == 1 %}
+                                <a class="dropdown-item" href="/watch_list"><span class="hide-title">{{'watchlist'|load_lang}}</span></a>
+                                <a class="dropdown-item" href="/star_doc"><span class="hide-title">{{'star_doc'|load_lang}}</span></a>
+                            {% endif %}
+                            <div class="dropdown-divider"></div>
+							{% if imp[2][2] == 1 %}
+                                <a class="dropdown-item" href="/logout"><span class="hide-title">{{'logout'|load_lang}}</span></a>
+                            {% else %}
+                            <a class="dropdown-item" href="/login"><span class="hide-title">{{'login'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/register"><span class="hide-title">{{'register'|load_lang}}</span></a>
+                            {% endif %}
                         </div>
-                    {% endif %}
+                    </div>
                 </div>
                 <form method="post" action="/search" id="searchform" class="form-inline">
                     <div class="input-group">
                         <input type="search" name="search" placeholder="{{'search'|load_lang}}" accesskey="f" class="form-control" id="searchInput" autocomplete="off">
                         <span class="input-group-btn">
-                            <button formaction="/goto" name="go" value="view" id="searchGoButton" class="btn btn-secondary"><span class="fa fa-eye"></span></button>
                             <button name="fulltext" value="search" id="searchSearchButton" class="btn btn-secondary"><span class="fa fa-search"></span></button>
+                            <button formaction="/goto" name="go" value="view" id="searchGoButton" class="btn btn-secondary"><span class="fa fa-arrow-right"></span></button>
                         </span>
                     </div>
                 </form>
@@ -193,7 +239,7 @@
                         {{imp[1][1]|safe}}
                     </p>
                     <div id="powered">
-                        <a href="https://gitlab.com/librewiki/Liberty-MW-Skin">Liberty</a> | <a href="https://github.com/openNAMU/openNAMU">openNAMU</a>
+                        <a href="https://github.com/Gwangtori/onemindwiki-Liberty">Liberty</a> | <a href="https://github.com/openNAMU/openNAMU">openNAMU</a>
                     </div>
                 </div>
             </div>

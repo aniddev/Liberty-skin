@@ -220,10 +220,6 @@ button#come:hover {
     color: white;
 }
 
-.navbar-fixed-bottom, .navbar-fixed-top {
-    position: absolute;
-}
-
 #cate, .opennamu_category {
     border: 1px solid #ccc;
     border-radius: 5px;
