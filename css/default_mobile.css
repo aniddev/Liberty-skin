@@ -54,6 +54,7 @@
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .title {
         padding: 0.5rem;
+        min-height: 3.5rem;
     }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .contentSub {

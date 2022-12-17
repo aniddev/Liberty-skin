@@ -8,7 +8,7 @@
     border-color: #555;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-header .main_title_a {
+.Liberty .content-wrapper .liberty-content .liberty-content-header .main_title_a, sub {
     color: #DDD;
 }
 
@@ -60,7 +60,7 @@ button.btn.btn-secondary.tools-btn.dropdown-toggle {
     border-color: #555;
 }
 
-a.dropdown-item {
+a.dropdown-item, .login-dropdown-name {
     color: #ddd;
 }
 
@@ -101,7 +101,13 @@ ul#live-recent-list {
 
 .dropdown-menu {
     background-color: black;
+    border-color: #555;
 }
+
+.dropdown-divider {
+    background-color: #555;
+}
+
 
 a {
     color: #ec9f19;
@@ -190,10 +196,6 @@ background-color: #438a83;
 
 div.scroll-buttons a {
     background-color: #1F2023;
-}
-
-#toc-name, .opennamu_TOC_title {
-    background-color: #1f2023;
 }
 
 h1, h2, h3, h4, h5, h6 hr,

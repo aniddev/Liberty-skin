@@ -1,4 +1,4 @@
-//윈도우 사이즈에 따라 변경을 할지 않할 지 체크한다.
+//윈도우 사이즈에 따라 변경을 할지 안할 지 체크한다.
 let isAllowRequestList = true;
 let liberty_load_type = 'A';
 
@@ -125,19 +125,19 @@ jQuery(document).ready(function(jQuery) {
 });
 
 /* 드롭다운 페이드인 */
-jQuery('.dropdown').on('show.bs.dropdown', function(e) {
-    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(200);
+jQuery('.dropdown').on('show.bs.dropdown', function() {
+    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(400);
 });
 
-jQuery('.dropdown').on('hide.bs.dropdown', function(e) {
-    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(200);
+jQuery('.dropdown').on('hide.bs.dropdown', function() {
+    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(400);
 });
 
-jQuery('.btn-group').on('show.bs.dropdown', function(e) {
-    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(200);
+jQuery('.btn-group').on('show.bs.dropdown', function() {
+    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(400);
 });
 
-jQuery('.btn-group').on('hide.bs.dropdown', function(e) {
-    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(200);
+jQuery('.btn-group').on('hide.bs.dropdown', function() {
+    jQuery(this).find('.dropdown-menu').first().stop(true, true).fadeToggle(400);
 });
 /* 드롭다운 페이드인 End */

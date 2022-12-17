@@ -38,7 +38,7 @@
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta property="og:type" content="website">
-        <meta name="theme-color" content="#F74646">
+        <meta name="theme-color" content="#0C529A">
     </head>
     <body class="Liberty">
         <div class="nav-wrapper navbar-fixed-top">
@@ -61,7 +61,7 @@
                         <div class="dropdown-menu" role="menu">
                             <a class="dropdown-item" href="/other"><span class="fa fa-plus-circle"></span><span class="hide-title">{{'tool'|load_lang}}</span></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/change/skin_set"><span class="fa fa-wrench"></span><span class="hide-title">{{'skin_set'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/skin_set"><span class="fa fa-wrench"></span><span class="hide-title">{{'skin_set'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/upload"><span class="fa fa-upload"></span><span class="hide-title">{{'upload'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/admin_list"><span class="fa fa-user-secret"></span><span class="hide-title">{{'admin_list'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/list/admin/auth_use"><span class="fa fa-outdent"></span><span class="hide-title">{{'authority_use_list'|load_lang}}</span></a>
@@ -113,9 +113,7 @@
                                     {% if imp[2][2] == 0 %}
                                     IP User
                                     {% else %}
-                                    {% if imp[2][4] != '' %}
                                     Member
-                                    {% endif %}
                                     {% endif %}
                                 </div>
                             </div>
@@ -146,8 +144,8 @@
                     <div class="input-group">
                         <input type="search" name="search" placeholder="{{'search'|load_lang}}" accesskey="f" class="form-control" id="searchInput" autocomplete="off">
                         <span class="input-group-btn">
-                            <button name="fulltext" value="search" id="searchSearchButton" class="btn btn-secondary"><span class="fa fa-search"></span></button>
-                            <button formaction="/goto" name="go" value="view" id="searchGoButton" class="btn btn-secondary"><span class="fa fa-arrow-right"></span></button>
+                            <button formaction="/goto" name="go" value="view" id="searchGoButton" class="btn btn-secondary"><span class="fa fa-search"></span></button>
+                            <button name="fulltext" value="search" id="searchSearchButton" class="btn btn-secondary"><span class="fa fa-arrow-right"></span></button>
                         </span>
                     </div>
                 </form>
@@ -195,24 +193,10 @@
                         <div class="content-tools">
                             <div class="btn-group" role="group" aria-label="content-tools">
                                 {% for sub_d in menu %}
-                                    {% if loop.index > 5 %}
-                                        {% if loop.index == 6 %}
-                                            <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                <span class="caret"></span>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                            {% set i = 0 %}
-                                        {% endif %}
-                                        <a class="dropdown-item" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
+                                    {% if sub_d|length > 2 and sub_d[2] == 1 %}
+                                        <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}" id="topic_color">{{sub_d[1]}}</a>
                                     {% else %}
-                                        {% if sub_d|length > 2 and sub_d[2] == 1 %}
-                                            <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}" id="topic_color">{{sub_d[1]}}</a>
-                                        {% else %}
-                                            <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
-                                        {% endif %}
-                                    {% endif %}
-                                    {% if not menu[loop.index] and loop.index > 5 %}
-                                        </div>
+                                        <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -233,7 +217,7 @@
                 <div class="liberty-footer" id="bottom">
                     <p>
                         {% if imp[3][1] != 0 %}
-                            {{'last_edit_time'|load_lang}} : {{imp[3][1]}}
+                            {{'last_edit_time'|load_lang}}: {{imp[3][1]}}
                             <br>
                         {% endif %}
                         {{imp[1][1]|safe}}

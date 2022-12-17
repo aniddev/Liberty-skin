@@ -1,6 +1,8 @@
-/* 메인 색상 #F74646 */
-/* 세컨드 색상 #F97A7A */
-/* 테두리 색상 #e1e8ed */
+/* 위키 대표 색과 맞게 아래 변수를 수정해 주세요. 서브 컬러는 마우스를 호버했을 때 표시되는 색상입니다. */
+:root {
+    --main-color: #0C529A;
+    --sub-color: #5183B6;
+}
 
 /* 태그 수정 */
 * {
@@ -42,26 +44,32 @@ input[type=password] {
 
 h1 {
     font-size: 2.0rem;
+    font-weight: 600;
 }
 
 h2 {
     font-size: 1.8rem;
+    font-weight: 600;
 }
 
 h3 {
     font-size: 1.6rem;
+    font-weight: 600;
 }
 
 h4 {
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 h5 {
     font-size: 1.3rem;
+    font-weight: 600;
 }
 
 h6 {
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 ol, ul, p {
@@ -169,7 +177,7 @@ del, s, strike {
 /* 네비 수정 */
 .Liberty .nav-wrapper {
     min-height: 2.8rem;
-    background-color: #F74646;
+    background-color: var(--main-color);
     z-index: 1001;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
@@ -204,7 +212,7 @@ del, s, strike {
 }
 
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover, .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus {
-    background-color: #F97A7A;
+    background-color: var(--sub-color);
     transition: 0.3s;
 }
 
@@ -246,8 +254,8 @@ del, s, strike {
 }
 
 .Liberty .nav-wrapper .navbar .form-inline .btn:hover, .Liberty .nav-wrapper .navbar .form-inline .btn:focus {
-    background-color: #F74646;
-    border-color: #F97A7A;
+    background-color: var(--main-color);
+    border-color: var(--sub-color);
     color: #fff;
     outline: 0;
 }
@@ -274,7 +282,7 @@ del, s, strike {
 
 .Liberty .nav-wrapper .navbar .navbar-login .fa {
     color: #fff;
-    padding: 0.3rem 0;
+    padding: 0.3rem 0.4rem 0.3rem 0;
     font-size: 1.4rem;
 }
 
@@ -404,7 +412,7 @@ del, s, strike {
     content: " ";
     width: 15rem;
     display: block;
-    border-bottom: 2px solid #F74646;
+    border-bottom: 2px solid var(--main-color);
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
@@ -447,14 +455,14 @@ del, s, strike {
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label {
-    background-color: #F74646;
+    background-color: var(--main-color);
     padding: 0.4rem;
     font-size: 0.8rem;
     font-weight: 400;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover {
-    background-color: #F97A7A;
+    background-color: var(--sub-color);
     transition: 0.3s;
 }
 
@@ -511,7 +519,7 @@ del, s, strike {
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:hover,
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:focus,
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
-    background-color: #F74646;
+    background-color: var(--main-color);
     color: #fff;
     transition: 0.3s;
     outline: 0;
@@ -524,6 +532,7 @@ del, s, strike {
 
 .Liberty .content-wrapper .liberty-content .liberty-content-header .title {
     padding: 1rem;
+    min-height: 4.5rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-header .contentSub {
@@ -595,6 +604,7 @@ del, s, strike {
 #topic_color:hover {
 background-color: #c5f4c5;
 color: #373a3c;
+border-color: #ccc;
 }
 /* 컨텐츠 수정 End */
 
@@ -642,7 +652,7 @@ color: #373a3c;
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #F74646;
+    background-color: var(--main-color);
     color: #fff;
     transition: 0.3s;
 }
@@ -656,7 +666,7 @@ color: #373a3c;
 }
 
 .form-control:focus {
-    border-color: #F74646;
+    border-color: var(--main-color);
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
     transition: 0.3s;
