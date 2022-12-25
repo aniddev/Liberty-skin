@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/views/liberty/css/jquery-ui.min.css?ver=1">
         {{imp[3][3]|safe}}
         <link rel="stylesheet" href="/views/liberty/css/style.css?ver=9">
-        <link rel="stylesheet" as="style" crossorigin href="/views/liberty/css/pretendard.css" />
+        <link rel="stylesheet" href="/views/liberty/css/more.css">
         {% if request.cookies.get('main_css_darkmode', '') == '1' %}
             <link rel="stylesheet" href="/views/main_css/css/sub/dark.css?ver=4">
             <link rel="stylesheet" href="/views/liberty/css/dark.css?ver=4">
@@ -38,7 +38,7 @@
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta property="og:type" content="website">
-        <meta name="theme-color" content="#F74646">
+        <meta name="theme-color" content="var(--main-color)">
     </head>
     <body class="Liberty">
         <div class="nav-wrapper navbar-fixed-top">
@@ -113,7 +113,9 @@
                                     {% if imp[2][2] == 0 %}
                                     IP User
                                     {% else %}
+                                    {% if imp[2][4] != '' %}
                                     Member
+                                    {% endif %}
                                     {% endif %}
                                 </div>
                             </div>
@@ -223,7 +225,7 @@
                         {{imp[1][1]|safe}}
                     </p>
                     <div id="powered">
-                        <a href="https://github.com/Gwangtori/onemindwiki-Liberty">Liberty</a> | <a href="https://github.com/openNAMU/openNAMU">openNAMU</a>
+                        <a href="https://github.com/onemindwiki/Liberty-skin">Liberty</a> | <a href="https://github.com/openNAMU/openNAMU">openNAMU</a>
                     </div>
                 </div>
             </div>

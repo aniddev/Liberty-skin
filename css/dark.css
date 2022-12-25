@@ -68,7 +68,15 @@ a.dropdown-item, .login-dropdown-name {
     background-color: #383b40;
 }
 
-.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover {
+.Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:before {
+    border-bottom-color: #555;
+}
+
+.Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:after {
+    border-bottom-color: #000;
+}
+
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover {
     background: black;
     color: #ddd;
 }
@@ -108,6 +116,9 @@ ul#live-recent-list {
     background-color: #555;
 }
 
+div.scroll-buttons a {
+    border-color: #555;
+}
 
 a {
     color: #ec9f19;
@@ -207,4 +218,8 @@ h1, h2, h3, h4, h5, h6 hr,
     background-color: #2d2f34;
     border-color: #383b40;
     color: #ddd;
+}
+
+.opennamu_comment_blind_not {
+	background: #1f2023;
 }
